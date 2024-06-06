@@ -7,8 +7,8 @@ from typing import List
 # Now our install_packages is a list with names of all the packages that need to be installed. However, if there are
 # a lot of libraries that need to be installed then this list will be too long. To fix this, we are going to create
 # the function below. 
-def get_requirements()-> list[str]:
-    requirements_list = list[str] = [] 
+def get_requirements()-> List[str]:
+    requirements_list: List[str] = [] 
     return requirements_list
 
 setup(
