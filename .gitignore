@@ -162,3 +162,9 @@ cython_debug/
 #.idea/
 
 sensorenv/
+artifact/
+logs/
+
+Notes.ipynb
+fast.py
+
