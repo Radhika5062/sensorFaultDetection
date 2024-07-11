@@ -60,7 +60,7 @@ jobs:
           # push it to ECR so that it can
           # be dployed to EC2.
           
-          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/#ECR_REPOSITORY:$IMAGE_TAG
           echo "::set-output name=image::$ECR_REGISTRY/#ECR_REPOSITORY:$IMAGE_TAG"
 
