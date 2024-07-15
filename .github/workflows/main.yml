@@ -59,10 +59,11 @@ jobs:
           # Build a docker container and
           # push it to ECR so that it can
           # be dployed to EC2.
+          echo $ECR_REPOSITORY
           
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/#ECR_REPOSITORY:$IMAGE_TAG
-          echo "::set-output name=image::$ECR_REGISTRY/#ECR_REPOSITORY:$IMAGE_TAG"
+          echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
 
   Continuous-Deployment:
     needs: build-and-push-ecr-image
@@ -86,7 +87,7 @@ jobs:
         run: |
           docker pull ${{secrets.AWS_ECR_LOGIN_URI}}/${{secrets.ECR_REPOSITORY_NAME}}::latest
       
-      # -name: Stop and remove sensor container if running
+      # - name: Stop and remove sensor container if running
       #   run: |
       #   docker ps -q --filter "name=sensor" | grep -q . && docker stop
       #   sensor && docker rm -fv sensor
