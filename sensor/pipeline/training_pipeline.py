@@ -26,7 +26,7 @@ class TrainPipleine:
     # class variable and we can then use it outside of the class too. 
     is_pipeline_running = False
     #Deployment related code
-    self.s3_sync = S3Sync()
+    s3_sync = S3Sync()
     #
     def __init__(self):
         self.training_pipeline_config = TrainingPipelineConfig()
