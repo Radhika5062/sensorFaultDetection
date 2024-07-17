@@ -33,7 +33,7 @@
 	
 5. EC2 machine  Ubuntu  Created
 
-6. Open EC2 and Install docker in EC2 Machine.
+6. Open EC2 and Install docker in EC2 Machine
 	
 	
 	#optinal
