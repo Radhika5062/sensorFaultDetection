@@ -57,6 +57,7 @@ async def index():
 @app.get("/train")
 async def train():
     try:
+        logging.info("Hitting train")
         training_pipeline = TrainPipleine()
         if training_pipeline.is_pipeline_running:
             return Response("Training pipeline is already running")
